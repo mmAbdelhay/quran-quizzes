@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>امتحانات ضبط حفظ القرآن</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/quiz.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="orn">۞ ۞ ۞</div>
+    <h1>امتحانات ضبط حفظ القرآن</h1>
+    <p class="sub">اختر الامتحان وابدأ</p>
+  </header>
+  <div id="list" class="home-list"></div>
+  <p class="note">راجع أي إجابة تشكّك فيها على المصحف.</p>
+</div>
+<script src="assets/catalog.js"></script>
+<script>
+document.getElementById("list").innerHTML = window.CATALOG.map(q =>
+  `<a class="qcard" href="${q.path}"><h2>${q.title}</h2><p>${q.desc}</p><div class="meta">${q.count} سؤال</div></a>`
+).join("");
+</script>
+</body>
+</html>

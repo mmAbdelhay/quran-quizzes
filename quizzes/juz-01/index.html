@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>امتحان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/quiz.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="orn">۞ ۞ ۞</div>
+    <a class="back" href="../../">← كل الامتحانات</a>
+    <h1 id="qtitle"></h1>
+    <p class="sub" id="qsub"></p>
+  </header>
+
+  <section id="start" class="card intro">
+    <p style="margin-top:0">الامتحان ده بيقيس <b>الضبط الدقيق</b> للحفظ، مش مجرد إنك فاكر الآية:</p>
+    <ul>
+      <li>الآية في أي <b>ربع</b></li>
+      <li><b>إيه الآية اللي بعدها</b> في الترتيب</li>
+      <li><b>المتشابهات بالحرف</b>: واو، باء، تقديم وتأخير، وصيغ سور تانية</li>
+    </ul>
+    <p style="color:var(--muted);font-size:15px">عدد الأسئلة <b id="qcount"></b>، والأسئلة مخلوطة. ترتيب الاختيارات بيتغيّر كل مرة.</p>
+    <label for="name">اسمك</label>
+    <input id="name" type="text" placeholder="اكتب اسمك" autocomplete="off">
+    <div class="row"><button id="go" class="btn" disabled>ابدأ الامتحان</button></div>
+  </section>
+
+  <section id="quiz" class="card hidden">
+    <div class="progress"><span id="pos"></span><span id="live"></span></div>
+    <div class="bar"><i id="barfill"></i></div>
+    <span id="tag" class="tag"></span>
+    <p id="qtext" class="q"></p>
+    <div id="opts" class="opts"></div>
+    <button id="hintbtn" class="hintbtn hidden">تلميح</button>
+    <div id="hint" class="hint hidden"></div>
+    <div id="fb" class="fb hidden"></div>
+    <div class="nav"><button id="next" class="btn hidden">السؤال التالي</button></div>
+  </section>
+
+  <section id="result" class="card hidden">
+    <div class="score">
+      <div id="rname" style="color:var(--muted)"></div>
+      <div class="big" id="rscore"></div>
+      <div class="grade" id="rgrade"></div>
+      <div class="split" id="rsplit"></div>
+    </div>
+    <div class="row" style="justify-content:center">
+      <button id="copy" class="btn">نسخ النتيجة لإرسالها</button>
+      <button id="again" class="btn ghost">إعادة الامتحان</button>
+    </div>
+    <textarea id="summary" readonly class="hidden"></textarea>
+    <div id="copied" class="hint hidden" style="text-align:center"></div>
+    <div class="review" id="review"></div>
+  </section>
+
+  <p class="note">راجع أي إجابة تشكّك فيها على المصحف.</p>
+</div>
+
+<script src="questions.js"></script>
+<script src="../../assets/quiz.js"></script>
+</body>
+</html>
