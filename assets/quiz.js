@@ -1,6 +1,6 @@
 // محرك الامتحان: يقرأ window.QUIZ من ملف questions.js الخاص بكل امتحان
 (function(){
-const Q = window.QUIZ.questions;
+let Q = window.QUIZ.questions;
 document.title = window.QUIZ.title;
 document.getElementById("qtitle").textContent = window.QUIZ.title;
 document.getElementById("qsub").textContent = window.QUIZ.subtitle || "";
@@ -16,6 +16,7 @@ $("go").onclick = start;
 
 function start(){
   person = $("name").value.trim();
+  Q = shuffle(window.QUIZ.questions); // ترتيب جديد للأسئلة في كل محاولة
   i=0; score=0; answers=[];
   $("start").classList.add("hidden"); $("result").classList.add("hidden");
   $("quiz").classList.remove("hidden");
